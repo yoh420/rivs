@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const body = encodeURIComponent(
         `Name: ${name}\nEmail: ${email}\nCompany: ${company}\n\n${message}`
       );
-      window.location.href = `mailto:admin@rivsolutions.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:support@rivsolutions.com?subject=${subject}&body=${body}`;
 
       if (status) {
         status.textContent = 'Opening your email client to send this message…';
