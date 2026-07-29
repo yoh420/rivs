@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach((el) => el.classList.add('is-visible'));
   }
 
-  // Contact form (static hosting friendly: mailto fallback)
+  // Contact form (submits directly to Google Forms, which emails support@rivsolutions.com)
   const form = document.querySelector('#contact-form');
   if (form) {
     form.addEventListener('submit', (e) => {
@@ -53,17 +53,33 @@ document.addEventListener('DOMContentLoaded', () => {
       const company = data.get('company') || '';
       const message = data.get('message') || '';
 
-      const subject = encodeURIComponent(`Website inquiry from ${name}`);
-      const body = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\nCompany: ${company}\n\n${message}`
-      );
-      window.location.href = `mailto:support@rivsolutions.com?subject=${subject}&body=${body}`;
+      const service = data.get('service') || '';
+      const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSeOCtI9-3rGaPBjzUHZqa4U9SncY4Lza4Q2KJh41pqHrMYQYQ/formResponse';
+      const params = new URLSearchParams({
+        'entry.847286283': name,
+        'entry.1195677954': email,
+        'entry.1895417018': company,
+        'entry.1091276193': service,
+        'entry.116176970': message,
+        'submit': 'Submit',
+      });
 
-      if (status) {
-        status.textContent = 'Opening your email client to send this message…';
-        status.classList.remove('is-error');
-        status.classList.add('is-success');
-      }
+      fetch(formUrl, { method: 'POST', mode: 'no-cors', body: params })
+        .then(() => {
+          if (status) {
+            status.textContent = 'Thanks — your message has been sent to support@rivsolutions.com.';
+            status.classList.remove('is-error');
+            status.classList.add('is-success');
+          }
+          form.reset();
+        })
+        .catch(() => {
+          if (status) {
+            status.textContent = 'Something went wrong sending your message. Please email support@rivsolutions.com directly.';
+            status.classList.remove('is-success');
+            status.classList.add('is-error');
+          }
+        });
     });
   }
 });
