@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Portal Sign In | RIVS Business Solutions</title>
+<meta name="description" content="Sign in to the RIVS Business Solutions client portal.">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="apple-touch-icon" href="assets/logo.png">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__brand">
+      <img src="assets/logo.png" alt="RIVS Business Solutions logo">
+      <span>RIVS Business Solutions</span>
+    </a>
+    <nav class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" hidden>Sign In</a>
+    </nav>
+    <a href="contact.html" class="nav__cta">Get a Quote</a>
+    <button class="nav__toggle" aria-label="Toggle menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="nav__mobile">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html" hidden>Sign In</a>
+    <a href="contact.html" class="btn btn--primary">Get a Quote</a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <span class="hero__eyebrow">Client Portal</span>
+      <h1>Sign in to your account.</h1>
+      <p>Access your support tickets, invoices, and documents in one place.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container" style="max-width:480px;">
+      <div class="form-card reveal">
+        <div class="auth-tabs">
+          <button type="button" class="auth-tab is-active" data-tab="signin">Sign In</button>
+          <button type="button" class="auth-tab" data-tab="signup">Create Account</button>
+        </div>
+
+        <form id="signin-form" class="auth-form">
+          <div class="field">
+            <label for="signin-email">Email</label>
+            <input type="email" id="signin-email" name="email" required placeholder="jane@company.com">
+          </div>
+          <div class="field">
+            <label for="signin-password">Password</label>
+            <input type="password" id="signin-password" name="password" required placeholder="••••••••">
+          </div>
+          <button type="submit" class="btn btn--primary" style="width:100%;">Sign In</button>
+          <p class="form-status"></p>
+        </form>
+
+        <form id="signup-form" class="auth-form" hidden>
+          <div class="field">
+            <label for="signup-name">Full name</label>
+            <input type="text" id="signup-name" name="name" required placeholder="Jane Smith">
+          </div>
+          <div class="field">
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" name="email" required placeholder="jane@company.com">
+          </div>
+          <div class="field">
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" name="password" required placeholder="At least 8 characters">
+          </div>
+          <div class="field">
+            <label for="signup-confirm">Confirm password</label>
+            <input type="password" id="signup-confirm" name="confirm" required placeholder="••••••••">
+          </div>
+          <button type="submit" class="btn btn--primary" style="width:100%;">Create Account</button>
+          <p class="form-status"></p>
+        </form>
+
+        <p class="form-note">Prototype only — account data is stored in your browser, not a live database.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand"><img src="assets/logo.png" alt="RIVS logo"><span>RIVS Business Solutions</span></div>
+        <p class="tagline">Reliable Integrated Value Systems. Managed IT support, cloud, and cybersecurity for growing businesses.</p>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html">Managed IT Support</a></li>
+          <li><a href="services.html">Cloud Solutions</a></li>
+          <li><a href="services.html">Cybersecurity</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:support@rivsolutions.com">support@rivsolutions.com</a></li>
+          <li><a href="contact.html">Request a quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 RIVS Business Solutions. All rights reserved.</span>
+      <span>Reliable Integrated Value Systems</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/auth.js"></script>
+<script>
+  document.querySelectorAll('.auth-tab').forEach((tab) => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.auth-tab').forEach((t) => t.classList.remove('is-active'));
+      tab.classList.add('is-active');
+      const target = tab.getAttribute('data-tab');
+      document.querySelector('#signin-form').hidden = target !== 'signin';
+      document.querySelector('#signup-form').hidden = target !== 'signup';
+    });
+  });
+</script>
+</body>
+</html>
