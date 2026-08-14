@@ -624,24 +624,26 @@ section { position: relative; }
 }
 .footer__bg-video {
   position: absolute;
-  top: 50%; right: -8%;
-  width: min(560px, 60%);
+  top: 50%; right: 4%;
+  width: min(320px, 34%);
   transform: translateY(-50%);
   object-fit: contain;
   z-index: -2;
-  opacity: 0.5;
+  opacity: 0.55;
   mix-blend-mode: screen;
   filter: saturate(1.2);
   pointer-events: none;
+  mask-image: radial-gradient(circle at center, #000 55%, transparent 78%);
+  -webkit-mask-image: radial-gradient(circle at center, #000 55%, transparent 78%);
 }
 .footer__bg-overlay {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(90deg, #060d12 0%, rgba(6, 13, 18, 0.35) 45%, rgba(6, 13, 18, 0.75) 100%);
+  background: linear-gradient(90deg, #060d12 0%, rgba(6, 13, 18, 0.2) 55%, rgba(6, 13, 18, 0.6) 100%);
 }
 @media (max-width: 680px) {
-  .footer__bg-video { width: 80%; right: -10%; opacity: 0.35; }
+  .footer__bg-video { width: 55%; right: 2%; opacity: 0.4; }
 }
 .footer__top {
   display: grid;
