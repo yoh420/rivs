@@ -485,6 +485,19 @@ section { position: relative; }
 }
 .split__visual svg { width: 62%; height: 62%; opacity: 0.9; filter: drop-shadow(0 6px 10px rgba(0,0,0,0.25)); }
 
+.card ul.feature-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.card ul.feature-list li {
+  text-align: left;
+  padding: 7px 0;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--teal-700);
+}
+
 .split ul.feature-list { margin-top: 28px; }
 .split ul.feature-list li {
   display: flex;
