@@ -41,6 +41,16 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach((el) => el.classList.add('is-visible'));
   }
 
+  // Preselect the service dropdown from a ?service= query param
+  const serviceSelect = document.querySelector('#service');
+  if (serviceSelect) {
+    const requestedService = new URLSearchParams(window.location.search).get('service');
+    if (requestedService) {
+      const option = Array.from(serviceSelect.options).find((opt) => opt.value === requestedService);
+      if (option) serviceSelect.value = requestedService;
+    }
+  }
+
   // Contact form (submits directly to Google Forms, which emails support@rivsolutions.com)
   const form = document.querySelector('#contact-form');
   if (form) {

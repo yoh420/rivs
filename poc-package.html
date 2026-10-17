@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proof of Concept Package | RIVS Business Solutions</title>
+<meta name="description" content="Turn your presentation into a proof of concept video, a complete PDF, and a ready-to-use script with RIVS Business Solutions.">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="apple-touch-icon" href="assets/logo.png">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__brand">
+      <img src="assets/logo.png" alt="RIVS Business Solutions logo">
+      <span>RIVS Business Solutions</span>
+    </a>
+    <nav class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" hidden>Sign In</a>
+    </nav>
+    <a href="contact.html" class="nav__cta">Get a Quote</a>
+    <button class="nav__toggle" aria-label="Toggle menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="nav__mobile">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html" hidden>Sign In</a>
+    <a href="contact.html" class="btn btn--primary">Get a Quote</a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <span class="hero__eyebrow">Proof of Concept Package</span>
+      <h1>Don't just pitch it. Prove it.</h1>
+      <p>Turn your presentation into a proof of concept video, a complete PDF, and a ready-to-use script.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="card reveal" style="padding:0; overflow:hidden;">
+        <video controls playsinline poster="assets/brand-lockup.png" style="width:100%; display:block;">
+          <source src="assets/video/proof-of-concept-demo.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--2" style="gap:28px; align-items:start;">
+        <div class="reveal">
+          <h2>What's included</h2>
+          <p>We take your pitch or presentation and turn it into something a prospect, investor, or stakeholder can actually see working.</p>
+          <ul class="feature-list" style="margin-top:20px;">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>A proof of concept video built from your presentation</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>A complete, polished PDF to leave behind</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>A ready-to-use script for presenting it yourself</span></li>
+          </ul>
+        </div>
+
+        <div id="request" class="form-card">
+          <h3 style="margin-top:0;">Request a Quote</h3>
+          <form id="contact-form">
+            <div class="field-row">
+              <div class="field">
+                <label for="poc-name">Full name</label>
+                <input type="text" id="poc-name" name="name" required placeholder="Full name">
+              </div>
+              <div class="field">
+                <label for="poc-email">Email</label>
+                <input type="email" id="poc-email" name="email" required placeholder="Email">
+              </div>
+            </div>
+            <div class="field">
+              <label for="poc-company">Company</label>
+              <input type="text" id="poc-company" name="company" placeholder="Company name">
+            </div>
+            <input type="hidden" name="service" value="Proof of Concept Package">
+            <div class="field">
+              <label for="poc-message">Tell us about your presentation</label>
+              <textarea id="poc-message" name="message" required placeholder="What are you pitching, and who's the audience?"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary" style="width:100%;">Request a Quote</button>
+            <p class="form-status"></p>
+            <p class="form-note">Submitting sends your request directly to support@rivsolutions.com.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <video class="footer__bg-video" autoplay muted loop playsinline poster="assets/brand-lockup.png">
+    <source src="assets/video/logo-animate-quote.mp4" type="video/mp4">
+  </video>
+  <div class="footer__bg-overlay"></div>
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand"><img src="assets/logo.png" alt="RIVS logo"><span>RIVS Business Solutions</span></div>
+        <p class="tagline">Reliable Integrated Value Systems. Managed IT support, cloud, and cybersecurity for growing businesses.</p>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html">Managed IT Support</a></li>
+          <li><a href="services.html">Cloud Solutions</a></li>
+          <li><a href="poc-package.html">Proof of Concept Package</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:support@rivsolutions.com">support@rivsolutions.com</a></li>
+          <li><a href="contact.html">Request a quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 RIVS Business Solutions. All rights reserved.</span>
+      <span>Reliable Integrated Value Systems</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
