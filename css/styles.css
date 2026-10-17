@@ -696,6 +696,7 @@ section { position: relative; }
   align-items: flex-start;
 }
 .contact-info .item { display: flex; gap: 16px; margin-bottom: 28px; }
+.contact-info .item[hidden] { display: none; }
 .contact-info .item .icon {
   width: 48px; height: 48px; border-radius: 14px;
   background: var(--nm-base); color: var(--teal-700);
